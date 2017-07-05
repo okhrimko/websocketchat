@@ -4,7 +4,8 @@ import (
 	"html/template"
 	"log"
 	"net/http"
-	chat "websocketchat/server"
+
+	chat "github.com/okhrimko/websocketchat/server"
 )
 
 var index = template.Must(template.ParseFiles("./index.html"))
