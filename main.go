@@ -8,7 +8,7 @@ import (
 	chat "github.com/okhrimko/websocketchat/server"
 )
 
-var index = template.Must(template.ParseFiles("./index.html"))
+var index = template.Must(template.ParseFiles("./assets/html/index.html"))
 
 func home(w http.ResponseWriter, r *http.Request) {
 	index.Execute(w, r)
