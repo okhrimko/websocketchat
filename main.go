@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	chat "github.com/okhrimko/websocketchat/server"
+	shared "github.com/okhrimko/websocketchat/tools"
 )
 
 var index = template.Must(template.ParseFiles("./assets/html/index.html"))
@@ -20,5 +21,6 @@ func main() {
 	http.HandleFunc("/", home)
 	http.HandleFunc("/ws", chat.WSHandler)
 
-	log.Fatal(http.ListenAndServe(":8000", nil))
+	port := shared.Getenv("PORT")
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
